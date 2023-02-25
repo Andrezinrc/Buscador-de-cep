@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import api from "./api";
-
-
 import './style.css';
+import api from './api.js';
 
 function App() {
 
@@ -23,7 +21,7 @@ function App() {
       setInput('')
 
     }catch{
-      alert("ops erro buscar")
+      alert("ops erro ao buscar")
       setInput('')
     }
   }
@@ -32,7 +30,7 @@ function App() {
     <div className="container">
       <h1 className="titulo">buscador CEP</h1>
 
-      <div className="containerInput">
+     <div div className="containerInput">
         <input type="text" placeholder="Digite o CEP" value={input} onChange={(event) => setInput(event.target.value)} />
 
         <button className="buttonSearch" onClick={handleSearch}>
@@ -44,14 +42,13 @@ function App() {
           <main className="main">
           <h2>CEP: {cep.cep}</h2>
           <span>{cep.logradouro}</span>
-          <span>complemento: {cep.complemento}</span>
-          <span>{cep.bairro}</span>
-          <span>{cep.localidade} - {cep.uf}</span>
+          <span>Complemento: {cep.complemento}</span>
+          <span>Bairro: {cep.bairro}</span>
+          <span>Cidade: {cep.localidade} - {cep.uf}</span>
         </main>
       )}
       
     </div>
-  );
+  )
 }
-
 export default App;
